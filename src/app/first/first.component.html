@@ -1,0 +1,15 @@
+<h1>{{title}}</h1>
+
+<!-- directive -->
+<!-- <h1 *ngIf="!title">
+    {{title}}
+</h1> -->
+<ul *ngFor="let item of items">
+    <li>
+       <p>{{item}}</p> 
+    </li>
+</ul>
+
+<h1>{{sum()}}</h1>
+<h2>{{ message()}}</h2>
+<h3>{{ ui() }}</h3>
