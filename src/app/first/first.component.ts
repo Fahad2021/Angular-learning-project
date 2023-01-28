@@ -31,5 +31,9 @@ export class FirstComponent implements OnInit {
   ui(){
     return this.chServices.fahad();
   }
+  dis="likha service a pathabo";
+  show(){
+    this.chServices.getValue(this.dis);
+  }
 
 }

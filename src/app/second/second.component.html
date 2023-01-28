@@ -1,0 +1,51 @@
+<a [routerLink]="['']" routerLinkActive="router-link-active">goto first</a>
+
+
+<h1>Reactive form</h1>
+<label for="color">write here
+    <input type="text" [formControl]="color">
+</label>
+
+<p>
+    {{color.value}}
+</p>
+
+
+<h1>Template Driven</h1>
+<label for="name">write here
+    <input type="text" [(ngModel)]="name">
+</label>
+<p>
+    {{ name }}
+</p>
+
+<h1>Form Group</h1>
+
+<form [formGroup]="myform" (ngSubmit)="onSubmit()">
+    <label for="username">Username:
+    <input type="text" formControlName="username" required maxlength="40" minlength="6">
+    <div *ngIf="username?.invalid && (username?.dirty || username?.touched)" class="alert alert-danger">
+        <div *ngIf="username?.hasError('required')">
+            Username is required
+        </div>
+        <div *ngIf="username?.hasError('minlength')">
+            Username need 6 character
+        </div>
+        <div *ngIf="username?.hasError('maxlength')">
+            Username need 40 character
+        </div>
+
+    </div>
+    </label>
+    <br>
+    <br>
+    <label for="password">Password
+        <input type="text" formControlName="password">
+    </label>
+    <br>
+    <button type="submit">Chap de</button>
+</form>
+
+<p>
+    {{myform.value|json}}
+</p>

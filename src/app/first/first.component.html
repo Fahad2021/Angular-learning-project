@@ -13,3 +13,11 @@
 <h1>{{sum()}}</h1>
 <h2>{{ message()}}</h2>
 <h3>{{ ui() }}</h3>
+<h4>{{ show()}}</h4>
+<a [routerLink]="['/s']" routerLinkActive="router-link-active">goto second</a>
+
+<ul>
+    <li><a [routerLink]="['fa-a']" routerLinkActive="router-link-active">child a</a></li>
+    <li><a [routerLink]="['fb-b']" routerLinkActive="router-link-active">child b</a></li>
+</ul>
+<router-outlet></router-outlet>

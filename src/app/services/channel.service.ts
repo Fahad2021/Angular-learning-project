@@ -1,11 +1,15 @@
 import { Injectable } from '@angular/core';
+import { DependServiceService } from './depend-service.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ChannelService {
 
-  constructor() { }
+  constructor(private dService:DependServiceService) {
+    console.log(dService.go());
+    
+   }
 
   display(){
     return ("Hello service");
@@ -13,5 +17,10 @@ export class ChannelService {
 
   fahad(){
     return("abc abd");
+  }
+
+  getValue(V:string){
+     console.log(V);
+     
   }
 }
